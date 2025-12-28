@@ -1,6 +1,6 @@
 # MedicoWriter - Professional Medical Writing Portfolio
 
-A high-converting, SEO-optimized portfolio website for Dr. Shradhha Mulange, designed for pharmaceutical and biotech clients.
+A high-converting, SEO-optimized portfolio website for **MedicoWriter**, designed for pharmaceutical and biotech clients. This project focuses on professional medical writing services including regulatory documents, clinical trials, and biostatistics.
 
 ## 🚀 Deployment
 
@@ -39,10 +39,10 @@ The contact form uses [Formspree](https://formspree.io/).
 
 - [ ] **Title Tag**: Verified unique and descriptive.
 - [ ] **Meta Description**: Includes primary keywords ("medical writer", "regulatory writing").
-- [ ] **H1 Tag**: Only one per page ("Precision Medical Writing...").
+- [ ] **H1 Tag**: Only one per page ("Medical Writing...").
 - [ ] **Alt Text**: All images have descriptive alt attributes.
 - [ ] **Performance**: Images are optimized (WebP/Isomorphic).
 
 ## 📄 License
 
-All rights reserved to Dr. Shradhha Mulange.
+All rights reserved to MedicoWriter.
