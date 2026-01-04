@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Close Mobile Menu on Link Click ---
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-menu .btn');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -121,4 +121,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // --- Dynamic Counter Animation ---
+    const counters = document.querySelectorAll('.counter');
+    const animationDuration = 1500; // 1.5 seconds
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const frameDuration = 1000 / 60; // 60fps
+        const totalFrames = animationDuration / frameDuration;
+        const increment = target / totalFrames;
+
+        let currentCount = 0;
+
+        const updateCounter = () => {
+            currentCount += increment;
+
+            if (currentCount < target) {
+                counter.innerText = Math.ceil(currentCount);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        // Start animation immediately since it's in the hero section
+        updateCounter();
+    });
 });

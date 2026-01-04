@@ -200,6 +200,8 @@ img {
     color: var(--color-primary);
     font-family: var(--font-heading);
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-menu {
@@ -281,6 +283,12 @@ img {
 .stat-item span {
     font-size: 0.9rem;
     opacity: 0.9;
+}
+
+.stat-item .counter {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
 }
 
 /* ==========================================================================

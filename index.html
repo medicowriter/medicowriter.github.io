@@ -118,7 +118,11 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.html"><i class="fas fa-feather-alt"></i> MedicoWriter</a>
+                <a href="index.html">
+                    <img src="assets/img/logo.png" alt="MedicoWriter Logo"
+                        style="height: 50px; vertical-align: middle; margin-right: 8px;">
+                    MedicoWriter
+                </a>
             </div>
 
             <nav class="navbar">
@@ -150,15 +154,15 @@
 
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <strong>10+</strong>
+                        <strong><span class="counter" data-target="10">0</span>+</strong>
                         <span>Years Experience</span>
                     </div>
                     <div class="stat-item">
-                        <strong>500+</strong>
+                        <strong><span class="counter" data-target="500">0</span>+</strong>
                         <span>Documents Delivered</span>
                     </div>
                     <div class="stat-item">
-                        <strong>98%</strong>
+                        <strong><span class="counter" data-target="98">0</span>%</strong>
                         <span>On-Time Delivery</span>
                     </div>
                 </div>
@@ -281,43 +285,54 @@
 
                 <div class="portfolio-grid reveal">
                     <!-- Case Study 1 -->
-                    <div class="case-study">
+                    <div class="case-study" onclick="window.location.href='case-studies/oncology-csr.html'"
+                        style="cursor: pointer;">
                         <div class="case-content">
-                            <span class="case-tag">Academic Writing</span>
-                            <h3>Academic Thesis Completion & Defense</h3>
-                            <p><strong>Challenge:</strong> A medical scholar struggled with structuring complex research
-                                data and adhering to university guidelines within a tight deadline.</p>
-                            <p><strong>Solution:</strong> Comprehensive editing, statistical review, and formatting
-                                support aligned with university standards.</p>
-                            <p><strong>Result:</strong> Successful thesis defense with minor revisions and on-time
-                                submission.</p>
+                            <span class="case-tag">Regulatory Writing</span>
+                            <h3>Accelerating Oncology Clinical Study Reports</h3>
+                            <p><strong>Challenge:</strong> Complex Phase III data with aggressive submission timelines.
+                            </p>
+                            <p><strong>Solution:</strong> Parallel writing strategy and dedicated QC teams.</p>
+                            <p><strong>Result:</strong> Submission ready 2 weeks ahead of schedule with zero major
+                                findings.</p>
+                            <a href="case-studies/oncology-csr.html"
+                                style="color: var(--color-primary); font-weight: 600; margin-top: 10px; display: inline-block;">Read
+                                Case Study →</a>
                         </div>
                     </div>
 
                     <!-- Case Study 2 -->
-                    <div class="case-study">
+                    <div class="case-study" onclick="window.location.href='case-studies/publication-support.html'"
+                        style="cursor: pointer;">
                         <div class="case-content">
                             <span class="case-tag">Publication</span>
                             <h3>High-Impact Journal Acceptance</h3>
-                            <p><strong>Challenge:</strong> A complex meta-analysis rejected by two journals due to
-                                clarity issues.</p>
-                            <p><strong>Solution:</strong> Restructured the manuscript, refined statistical presentation,
-                                and rewrote the discussion.</p>
-                            <p><strong>Result:</strong> Accepted in a Q1 Journal (Impact Factor > 5) with minor
+                            <p><strong>Challenge:</strong> Detailed meta-analysis rejected due to narrative clarity
+                                issues.</p>
+                            <p><strong>Solution:</strong> Restructured argumentation and enhanced visual data
+                                presentation.</p>
+                            <p><strong>Result:</strong> Accepted in a Q1 Journal (Impact Factor > 7) with minor
                                 revisions.</p>
+                            <a href="case-studies/publication-support.html"
+                                style="color: var(--color-primary); font-weight: 600; margin-top: 10px; display: inline-block;">Read
+                                Case Study →</a>
                         </div>
                     </div>
 
                     <!-- Case Study 3 -->
-                    <div class="case-study">
+                    <div class="case-study" onclick="window.location.href='case-studies/fda-submission.html'"
+                        style="cursor: pointer;">
                         <div class="case-content">
-                            <span class="case-tag">Patient Education</span>
-                            <h3>Simplified Consent Forms</h3>
-                            <p><strong>Challenge:</strong> High screen-fail rates due to complex Informed Consent Forms.
+                            <span class="case-tag">FDA Submission</span>
+                            <h3>Successful FDA NDA Submission</h3>
+                            <p><strong>Challenge:</strong> Coordinating 500+ documents from multiple vendors for an NDA.
                             </p>
-                            <p><strong>Solution:</strong> Redesigned ICFs using plain language principles and visual
-                                aids.</p>
-                            <p><strong>Result:</strong> Improved patient understanding and recruitment rate by 20%.</p>
+                            <p><strong>Solution:</strong> Centralized style guides, granular tracking, and
+                                cross-document QC.</p>
+                            <p><strong>Result:</strong> First-cycle approval with zero Refuse-to-File issues.</p>
+                            <a href="case-studies/fda-submission.html"
+                                style="color: var(--color-primary); font-weight: 600; margin-top: 10px; display: inline-block;">Read
+                                Case Study →</a>
                         </div>
                     </div>
                 </div>
