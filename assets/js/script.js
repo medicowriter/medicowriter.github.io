@@ -103,8 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    status.innerHTML = '<div class="alert alert-success">Message sent successfully! Dr. Mulange will contact you soon.</div>';
-                    this.reset();
+                    const formContainer = this.closest('.contact-form');
+                    formContainer.innerHTML = `
+                        <div class="success-message" style="text-align: center; padding: 2rem; animation: fadeInUp 0.5s ease-out;">
+                            <i class="fas fa-check-circle" style="font-size: 4rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                            <h3 style="color: #2ecc71; margin-bottom: 1rem;">Message Sent Successfully!</h3>
+                            <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem;">Thank you for reaching out. We will get back to you within 24 hours.</p>
+                            <button class="btn btn-primary" onclick="location.reload()">Send Another Message</button>
+                        </div>
+                    `;
                 } else {
                     status.innerHTML = '<div class="alert alert-error">Oops! There was a problem sending your message. Please try again.</div>';
                 }
