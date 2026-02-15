@@ -46,8 +46,29 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.medicowriter.com/case-studies/fda-submission.html</loc>
-    <lastmod>2026-01-04</lastmod>
+    <loc>https://www.medicowriter.com/case-studies/medical-thesis-success.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medicowriter.com/blog/index.html</loc>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.medicowriter.com/blog/medical-thesis-guide.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medicowriter.com/blog/understanding-p-values.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medicowriter.com/blog/how-to-select-right-journal.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

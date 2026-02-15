@@ -835,6 +835,23 @@ img {
     top: 4px;
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 15px 0;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: var(--color-primary);
+}
+
+.breadcrumbs span {
+    color: var(--color-text-light);
+    margin: 0 10px;
+}
+
 /* Service Layout Container */
 .service-container {
     display: grid;
@@ -867,4 +884,146 @@ img {
         position: static;
         margin-top: 2rem;
     }
+}
+
+/* ==========================================================================
+   #FAQ SECTION
+   ========================================================================== */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: var(--color-bg-light);
+}
+
+.faq-question i {
+    font-size: 0.9rem;
+    transition: transform 0.3s;
+    color: var(--color-primary);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-question {
+    color: var(--color-primary);
+    background-color: rgba(0, 78, 146, 0.05);
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: none;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    /* subtle divider */
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Service Card Links */
+.service-card-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+    /* Inherit text color */
+}
+
+.service-card-link:hover {
+    color: inherit;
+    /* Prevent blue link color on hover */
+}
+
+.service-card-link .service-card {
+    height: 100%;
+}
+
+/* Case Study Card Links */
+.case-study-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.case-study-link:hover {
+    color: inherit;
+}
+
+.case-study-link .case-study {
+    height: 100%;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: #FFF;
+    transform: scale(1.1);
 }

@@ -155,4 +155,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start animation immediately since it's in the hero section
         updateCounter();
     });
+
+    // --- FAQ Accordion ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all other items (optional - remove this block if you want multiple open)
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+    // --- WhatsApp Floating Button Injection ---
+    const whatsappBtn = document.createElement('a');
+    const message = encodeURIComponent("Hello MedicoWriter Team, I visited your website and I am interested in your services. Can you please help me?");
+    whatsappBtn.href = `https://wa.me/919503340441?text=${message}`;
+    whatsappBtn.className = 'whatsapp-float';
+    whatsappBtn.target = '_blank';
+    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    document.body.appendChild(whatsappBtn);
+
 });
+
