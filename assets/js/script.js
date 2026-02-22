@@ -81,12 +81,75 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger once on load
     revealOnScroll();
 
+    // --- Intl Tel Input Initialization ---
+    const mobileInput = document.querySelector("#mobile");
+    let iti;
+    if (mobileInput) {
+        iti = window.intlTelInput(mobileInput, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            initialCountry: "auto",
+            geoIpLookup: function (success, failure) {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => success(data.country_code))
+                    .catch(() => success("in"));
+            },
+            separateDialCode: true
+        });
+    }
+
     // --- Form Handling (Formspree) ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
+
+            const scrollToElement = (element) => {
+                // Mobile headers are generally shorter, use mobile offset if window width is <= 768px
+                const headerOffset = window.innerWidth <= 768 ? 80 : 100; // Offset for fixed header plus padding
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            };
+
+            // Validate mobile number
+            if (mobileInput && iti) {
+                const errorElement = document.getElementById('mobile-error');
+                if (!iti.isValidNumber()) {
+                    errorElement.style.display = 'block';
+                    scrollToElement(errorElement);
+                    mobileInput.focus();
+                    return; // Stop form submission if invalid
+                } else {
+                    errorElement.style.display = 'none';
+                }
+            }
+
+            // Validate email explicitly
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            if (emailInput && emailError) {
+                if (!emailRegex.test(emailInput.value)) {
+                    emailError.style.display = 'block';
+                    scrollToElement(emailError);
+                    emailInput.focus();
+                    return; // Stop form submission if invalid
+                } else {
+                    emailError.style.display = 'none';
+                }
+            }
+
             const formData = new FormData(this);
+            if (mobileInput && iti) {
+                // Submit the full international formatted number
+                formData.set('mobile', iti.getNumber());
+            }
+
             const status = document.getElementById('form-status');
             const submitBtn = this.querySelector('button[type="submit"]');
 
@@ -112,11 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="btn btn-primary" onclick="location.reload()">Send Another Message</button>
                         </div>
                     `;
+                    scrollToElement(formContainer);
                 } else {
-                    status.innerHTML = '<div class="alert alert-error">Oops! There was a problem sending your message. Please try again.</div>';
+                    try {
+                        const data = await response.json();
+                        if (data.hasOwnProperty('errors')) {
+                            const errorMessages = data.errors.map(err => err.message).join(", ");
+                            status.innerHTML = `<div class="alert alert-error" style="color: #e74c3c; font-size: 0.95rem; margin-top: 1rem;">Submission Error: ${errorMessages}.</div>`;
+                        } else {
+                            status.innerHTML = '<div class="alert alert-error" style="color: #e74c3c; font-size: 0.95rem; margin-top: 1rem;">Oops! There was a problem sending your message. Please try again.</div>';
+                        }
+                    } catch (e) {
+                        status.innerHTML = '<div class="alert alert-error" style="color: #e74c3c; font-size: 0.95rem; margin-top: 1rem;">Oops! There was a problem sending your message. Please try again.</div>';
+                    }
+                    scrollToElement(status);
                 }
             } catch (error) {
-                status.innerHTML = '<div class="alert alert-error">Oops! There was a problem connecting to the server.</div>';
+                status.innerHTML = '<div class="alert alert-error" style="color: #e74c3c; font-size: 0.95rem; margin-top: 1rem;">Oops! There was a problem connecting to the server.</div>';
+                scrollToElement(status);
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
