@@ -55,6 +55,7 @@
 
     <!-- Main CSS -->
     <link href="assets/css/style.css?v=1.0.0" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -609,6 +610,16 @@
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" class="form-control" required>
+                                <div id="email-error"
+                                    style="color: #e74c3c; font-size: 0.85rem; margin-top: 0.4rem; display: none;">
+                                    Please enter a valid email address.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number</label>
+                                <input type="tel" id="mobile" name="mobile" class="form-control" required>
+                                <div id="mobile-error"
+                                    style="color: #e74c3c; font-size: 0.85rem; margin-top: 0.4rem; display: none;">
+                                    Please enter a valid mobile number.</div>
                             </div>
                             <div class="form-group">
                                 <label for="service-type">Service Interested In</label>
@@ -670,6 +681,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="assets/js/script.js?v=1.0.0"></script>
 
 </body>
