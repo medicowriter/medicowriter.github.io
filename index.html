@@ -12,15 +12,34 @@
 
         gtag('config', 'AW-1004432150');
     </script>
+    <!-- Event snippet for Submit lead form conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-1004432150/Kf-xCIyPyfwbEJbW-d4D',
+                'value': 1.0,
+                'currency': 'INR',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
     <title>Scientific & Regulatory Medical Writing Services | MedicoWriter</title>
     <meta name="description"
-        content="Premier medical writing services for Pharma, Biotech & CROs. Expert Clinical Study Reports (CSR), Regulatory Submission, Manuscripts, and Biostatistics by Ph.D. scientists.">
+          content="Premier medical writing services for Pharma, Biotech & CROs. Expert Clinical Study Reports (CSR), Regulatory Submission, Manuscripts, and Biostatistics by Ph.D. scientists.">
     <meta name="keywords"
-        content="medical writer, medical thesis writing, MD dissertation, PhD thesis help, biostatistics services, medical manuscript editing, publication support, MedicoWriter">
+          content="medical writer, medical thesis writing, MD dissertation, PhD thesis help, biostatistics services, medical manuscript editing, publication support, MedicoWriter">
     <meta name="author" content="MedicoWriter Team">
     <link rel="canonical" href="https://www.medicowriter.com/">
     <link rel="alternate" hreflang="en" href="https://www.medicowriter.com/">
@@ -30,14 +49,14 @@
     <meta property="og:url" content="https://www.medicowriter.com/">
     <meta property="og:title" content="Scientific & Regulatory Medical Writing Services | MedicoWriter">
     <meta property="og:description"
-        content="Expert regulatory documents, manuscripts, and clinical content. 10+ years delivering for Global Pharma & CROs.">
+          content="Expert regulatory documents, manuscripts, and clinical content. 10+ years delivering for Global Pharma & CROs.">
     <meta property="og:image" content="https://www.medicowriter.com/assets/img/hero-bg-modern.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Scientific & Regulatory Medical Writing Services | MedicoWriter">
     <meta name="twitter:description"
-        content="Expert regulatory documents, manuscripts, and clinical content. Ph.D. driven quality.">
+          content="Expert regulatory documents, manuscripts, and clinical content. Ph.D. driven quality.">
     <meta name="twitter:image" content="https://www.medicowriter.com/assets/img/hero-bg-modern.png">
 
     <!-- Favicon -->
@@ -46,9 +65,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+          rel="stylesheet">
 
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -60,57 +78,57 @@
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "MedicoWriter",
-        "image": "https://www.medicowriter.com/assets/img/doctors/doctors-5.jpeg",
-        "url": "https://www.medicowriter.com",
-        "telephone": "+91 950 3340 441",
-        "email": "contact@medicowriter.com",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Viman Nagar",
-          "addressLocality": "Pune",
-          "addressRegion": "Maharashtra",
-          "postalCode": "411014",
-          "addressCountry": "IN"
-        },
-        "founder": {
-            "@type": "Organization",
-            "name": "MedicoWriter Team"
-        },
+        [
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "MedicoWriter",
+            "image": "https://www.medicowriter.com/assets/img/doctors/doctors-5.jpeg",
+            "url": "https://www.medicowriter.com",
+            "telephone": "+91 950 3340 441",
+            "email": "contact@medicowriter.com",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Viman Nagar",
+              "addressLocality": "Pune",
+              "addressRegion": "Maharashtra",
+              "postalCode": "411014",
+              "addressCountry": "IN"
+            },
+            "founder": {
+                "@type": "Organization",
+                "name": "MedicoWriter Team"
+            },
 
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "24"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://www.medicowriter.com/",
-        "name": "MedicoWriter",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.medicowriter.com/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.medicowriter.com/"
-        }]
-      }
-    ]
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "24"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://www.medicowriter.com/",
+            "name": "MedicoWriter",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.medicowriter.com/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.medicowriter.com/"
+            }]
+          }
+        ]
     </script>
 </head>
 

@@ -166,6 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
+                    // Report conversion to Google Ads
+                    if (typeof window.gtag_report_conversion === 'function') {
+                        window.gtag_report_conversion();
+                    }
                     const formContainer = this.closest('.contact-form');
                     formContainer.innerHTML = `
                         <div class="success-message" style="text-align: center; padding: 2rem; animation: fadeInUp 0.5s ease-out;">
