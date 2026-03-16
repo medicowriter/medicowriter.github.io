@@ -1051,3 +1051,28 @@ img {
     color: #FFF;
     transform: scale(1.1);
 }
+
+/* ==========================================================================
+   #POLICY PAGES
+   ========================================================================== */
+.policy-content {
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.policy-content h2 {
+    margin-top: 3rem;
+}
+
+.policy-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.policy-content p,
+.policy-content ul {
+    margin-bottom: 1.5rem;
+}
+
+.policy-content li {
+    margin-bottom: 0.5rem;
+}
